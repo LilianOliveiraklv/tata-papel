@@ -187,7 +187,4 @@ function adicionarAoCarrinho() {
 }
 
 
-function irParaLogin() {
-    window.location.href = "html/login.html";
-}
 
