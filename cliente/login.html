@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Tata Papel | Login</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Entre na sua conta Tata Papel e acesse arquivos digitais fofos e criativos.">
+  <meta name="author" content="Tata Papel">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Login - Tata Papel">
+  <meta property="og:description" content="Acesse sua conta para baixar arquivos digitais.">
+  <meta property="og:image" content="../img/capa-og.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/estrela-icon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init("-illMZdq-TRib_l_l");  
+</script>
+
+</head>
+
+<body>
+
+  <!-- Topo rosa -->
+  <div class="top-bar">
+    <p>Oie! Seja bem-vinda 💕 Use o cupom <strong>CHEGUEI10</strong> na sua primeira compra!</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+
+    <div class="header-left">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar">
+        <button id="searchBtn">🔍</button>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <img src="../img/logo.png" alt="Tata Papel - Logo" class="logo">
+    </div>
+
+    <div class="header-right">
+      <div class="cart">
+        <img src="../img/sacola-icon.svg" alt="Carrinho" class="icon-header">
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- MENU -->
+  <nav class="main-nav">
+    <a href="../index.html">Início</a>
+
+    <div class="dropdown">
+      <a>Artes para Caneca</a>
+      <div class="dropdown-content">
+        <a href="../html/caneca.html">Canecas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a>Encadernação</a>
+      <div class="dropdown-content">
+        <a href="../html/agenda2026.html">Agenda 2026</a>
+        <a href="#">Planner</a>
+        <a href="#">Cadernos</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="../html/editaveis.html">Editáveis</a>
+      <div class="dropdown-content">
+        <a href="../html/cards.html">Cards</a>
+        <a href="../html/convites.html">Convites</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOGIN -->
+  <section class="login-container">
+    <h1>Entrar 💗</h1>
+
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Seu e-mail" required>
+      <input type="password" id="loginSenha" placeholder="Sua senha" required>
+      <button type="submit" class="btn-login">Entrar</button>
+    </form>
+
+    <p>Ainda não tem conta?  
+      <p>Ainda não tem conta? <a href="cadastro.html">Criar conta</a></p>
+    </p>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="login.js"></script>
+  
+
+
+</body>
+</html>

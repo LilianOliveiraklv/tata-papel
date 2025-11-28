@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Tata Papel | Criar Conta</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Crie sua conta para acessar arquivos digitais fofos da Tata Papel.">
+  <meta name="keywords" content="cadastro,tata papel, criar conta, arquivos digitais">
+  <meta name="author" content="Tata Papel">
+
+  <!-- CSS PRINCIPAL → volta uma pasta -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="../img/estrela-icon.svg">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("-illMZdq-TRib_l_l");
+</script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <p>Oie! Seja bem-vinda 💕 Use o cupom <strong>CHEGUEI10</strong> na sua primeira compra!</p>
+</div>
+
+<header class="main-header">
+  <div class="header-left">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar" />
+      <button onclick="searchProducts()">🔍</button>
+    </div>
+  </div>
+
+  <div class="header-center">
+    <img src="../img/logo.png" alt="Tata Papel - Logo" class="logo" />
+  </div>
+
+  <div class="header-right">
+    <div class="user-login" id="loginArea" onclick="irParaLogin()">
+      <img src="../img/entrar-icon.svg" class="icon-header">
+      <span id="loginTexto">Entrar</span>
+    </div>
+
+    <div class="cart">
+      <img src="../img/sacola-icon.svg" alt="Carrinho" class="icon-header">
+      <span class="cart-count">0</span>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <!-- Corrigido: volta para a raiz -->
+  <a href="../index.html" class="active">Início</a>
+</nav>
+
+<section class="login-container">
+    <h1>Crie sua conta 💗</h1>
+
+    <form id="cadastroForm">
+
+        <input type="text" id="nome" placeholder="Seu nome" required>
+
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+
+        <input type="password" id="senha" placeholder="Crie uma senha" required>
+
+        <input type="password" id="confirmarSenha" placeholder="Repita a senha" required>
+
+        <button type="submit" class="btn-login">Cadastrar</button>
+    </form>
+
+</section>
+
+<!-- JS específico da página -->
+<script src="cadastro.js"></script>
+
+</body>
+</html>

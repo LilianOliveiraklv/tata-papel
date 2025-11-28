@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verificação de E-mail | Tata Papel</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Confirme seu cadastro inserindo o código enviado por e-mail. Tata Papel - segurança e fofura no seu acesso.">
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <link rel="icon" type="image/png" href="../img/estrela-icon.svg">
+</head>
+
+<body>
+
+<section class="login-container">
+    <h2>Digite o código enviado ao seu e-mail 💌</h2>
+
+    <input 
+        type="text" 
+        id="codigoDigitado" 
+        placeholder="Código de verificação" 
+        maxlength="6"
+        autocomplete="one-time-code"
+        inputmode="numeric"
+    >
+
+    <button class="btn-login" onclick="confirmarCodigo()">Confirmar</button>
+
+    <p class="resend-area">
+        Não recebeu? 
+        <a href="#" onclick="reenviarCodigo()">Reenviar código</a>
+    </p>
+</section>
+
+<script src="verificar.js"></script>
+
+</body>
+</html>
