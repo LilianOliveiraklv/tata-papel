@@ -24,11 +24,9 @@
   <meta name="twitter:description" content="Papelaria digital fofa e criativa.">
   <meta name="twitter:image" content="https://tatapapel.com.br/img/capa-og.jpg">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="img/estrela-icon.svg">
 </head>
 
@@ -40,40 +38,34 @@
   </div>
 
   <!-- Header -->
-<header class="main-header">
+  <header class="main-header">
+    <div class="header-left">
+      <form id="searchForm" class="search-box" onsubmit="return handleSearch(event)">
+        <input type="text" id="searchInput" placeholder="Buscar produtos, ex: planner" />
+        <button type="submit">🔍</button>
+      </form>
+    </div>
 
-  <!-- ESQUERDA: BUSCA -->
-  <div class="header-left">
-    <form id="searchForm" class="search-box" onsubmit="return handleSearch(event)">
-      <input type="text" id="searchInput" placeholder="Buscar produtos, ex: planner" />
-      <button type="submit">🔍</button>
-    </form>
+    <div class="header-center">
+      <a href="index.html"><img src="img/logo.png" alt="Tata Papel - Logo" class="logo" /></a>
+    </div>
+
+    <div class="header-right">
+      <!-- CORRIGIDO -->
+      <a href="cliente/login.html" class="user-login" id="loginArea">
+        <img src="img/entrar-icon.svg" class="icon-header" alt="">
+        <span id="loginTexto">Entrar</span>
+      </a>
+
+<a href="carrinho.html" class="cart" onclick="toggleCart(); return false;">
+  <div class="cart-icon-wrapper">
+    <img src="img/sacola-icon.svg" alt="Carrinho" class="icon-header">
+    <span id="cartCount">0</span>
   </div>
+</a>
 
-  <!-- CENTRO: LOGO -->
-  <div class="header-center">
-    <a href="index.html">
-      <img src="img/logo.png" alt="Tata Papel - Logo" class="logo">
-    </a>
-  </div>
-
-  <!-- DIREITA: LOGIN + CARRINHO -->
-  <div class="header-right">
-
-    <a href="cliente/login.html" class="user-login" id="loginArea">
-      <img src="img/entrar-icon.svg" class="icon-header" alt="Entrar">
-      <span id="loginTexto">Entrar</span>
-    </a>
-
-    <a href="carrinho.html" class="cart">
-      <img src="img/sacola-icon.svg" alt="Carrinho" class="icon-header">
-      <span class="cart-count">0</span>
-    </a>
-
-  </div>
-
-</header>
-
+    </div>
+  </header>
 
   <!-- Navigation -->
   <nav class="main-nav">
@@ -117,21 +109,45 @@
           <img src="img/planner2026.jpg" alt="Planner Digital 2026">
           <h3>Planner Digital 2026</h3>
           <p class="price">R$ 19,90</p>
-          <button class="add-to-cart">Adicionar à sacola</button>
+          <button class="buy-btn"
+  onclick="addToCart(
+    'agenda2026',
+    'Agenda Escolar 2026',
+    39.90,
+    'img/produtos/agenda2026.png'
+  )">
+  Quero
+</button>
         </article>
 
         <article class="product">
           <img src="img/kitprofessora.jpg" alt="Kit Professora">
           <h3>Kit Professora</h3>
           <p class="price">R$ 24,90</p>
-          <a href="https://mpago.la/2rWp9Ty" target="_blank" class="buy-btn">Comprar Kit Professora</a>
+          <button class="buy-btn"
+  onclick="addToCart(
+    'agenda2026',
+    'Agenda Escolar 2026',
+    39.90,
+    'img/produtos/agenda2026.png'
+  )">
+  Quero
+</button>
         </article>
 
         <article class="product">
           <img src="img/adesivosfofos.jpg" alt="Adesivos fofos">
           <h3>Adesivos Fofos</h3>
           <p class="price">R$ 9,90</p>
-          <a href="https://mpago.la/4XyZcQb" target="_blank" class="buy-btn">Comprar Adesivos</a>
+          <button class="buy-btn"
+  onclick="addToCart(
+    'agenda2026',
+    'Agenda Escolar 2026',
+    39.90,
+    'img/produtos/agenda2026.png'
+  )">
+  Quero
+</button>
         </article>
 
       </div>
@@ -182,7 +198,7 @@
     <img src="img/whatsapp-icon.png" alt="WhatsApp Tata Papel" />
   </a>
 
-  <!-- Scripts -->
+  <!-- Slider Script -->
   <script>
     let index = 0;
     const slides = document.getElementById('slides');
@@ -202,9 +218,37 @@
     }, 4000);
   </script>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
   <script src="cliente/login.js"></script>
   <script src="cliente/cadastro.js"></script>
+
+  <!-- Carrinho (obrigatório) -->
+  <script src="cliente/carrinho.js"></script>
+  <!-- CARRINHO LATERAL -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h2>Meu Carrinho</h2>
+    <button class="close-cart" onclick="toggleCart()">×</button>
+  </div>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total estimado:</span>
+      <strong id="cartTotal">R$ 0,00</strong>
+    </div>
+
+    <button class="checkout-btn" onclick="finalizarCompra()">
+      Finalizar compra
+    </button>
+  </div>
+</div>
+
+<!-- FUNDO DE ESCURECIMENTO -->
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
 
 </body>
 </html>
